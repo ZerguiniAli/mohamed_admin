@@ -1,79 +1,106 @@
-'use client'
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from '@/components/ui/input';
+import { B2bService } from './b2bAnnoncement';// Import Annonce interface from Annonce.tsx
 
-export const B2bDialog = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [document, setDocument] = useState('');
-  const [contact, setContact] = useState('');
-  const [selectedWilaya, setSelectedWilaya] = useState('');
-  const [selectedSectors, setSelectedSectors] = useState('');
+interface ModifyDialogProps extends B2bService {
+  onClose: () => void; // Function to handle closing the dialog
+  onSave: (modifiedAnnonce: B2bService) => void;
+}
 
-  const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value);
-  const handleDescriptionChange = (e: ChangeEvent<HTMLInputElement>) => setDescription(e.target.value);
-  const handleDocumentChange = (e: ChangeEvent<HTMLInputElement>) => setDocument(e.target.value);
-  const handleContactChange = (e: ChangeEvent<HTMLInputElement>) => setContact(e.target.value);
-  const handleWilayaChange = (e: ChangeEvent<HTMLSelectElement>) => setSelectedWilaya(e.target.value);
-  const handleSectorsChange = (e: ChangeEvent<HTMLSelectElement>) => setSelectedSectors(e.target.value);
+export const ModifyDialog: React.FC<ModifyDialogProps> = ({ id, title, wilaya, description, sectors, contact,document, onClose, onSave }) => {
+    const [newTitle, setNewTitle] = useState(title);
+    const [newDescription, setNewDescription] = useState(description);
+    const [newSelectedWilaya, setNewSelectedWilaya] = useState<string>(wilaya);
+    const [newDocument, setNewDocument]=useState<string>(document)
+    const [newSelectedSectors, setNewSelectedSectors] = useState<string>(sectors);
+    const [newSelectedContact, setNewSelectedContact] = useState<string>(contact); // State variable for contact
 
-  const handleSave = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/api/btob', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          title: title, // Include the title field
-          description: description,
-          wilaya: selectedWilaya,
-          sectors: selectedSectors,
-          Contact: contact,
-          document: document
-        }),
-      });
+    const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setNewTitle(e.target.value);
+    };
   
-      if (response.ok) {
-        console.log('B2b created successfully');
-        // Close the dialog
-        // Reload the page
-        window.location.reload();
-      } else {
-        // Log error response
-        const errorResponse = await response.json();
-        console.error('Failed to create b2b:', errorResponse);
-      }
-    } catch (error) {
-      console.error('Error creating b2b:', error);
-    }
-  };
+    const handleDescriptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setNewDescription(e.target.value);
+    };
   
+    const handleWilayaChange = (selectedValue: string) => {
+      setNewSelectedWilaya(selectedValue);
+    };
+  
+    const handleSectorsChange = (selectedValue: string) => {
+      setNewSelectedSectors(selectedValue);
+    };
+  
+    const handleDocumentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setNewDocument(e.target.value);
+    };
+  
+    const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setNewSelectedContact(e.target.value);
+    };
+  
+    const handleSave = async () => {
+        try {
+          const modifiedAnnonce: B2bService = {
+              id,
+              title: newTitle,
+              wilaya: newSelectedWilaya,
+              description: newDescription,
+              sectors: newSelectedSectors,
+              contact: newSelectedContact,
+              document: newDocument,
+          };
+      
+          // Make the API call to save the modified announcement
+          const response = await fetch(`http://localhost:3001/api/btob/${id}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(modifiedAnnonce),
+          });
+      
+          if (!response.ok) {
+            throw new Error('Failed to modify announcement');
+          }
+      
+          // Call onSave to update state or perform any necessary actions
+          onSave(modifiedAnnonce);
+      
+          // Close the dialog
+          onClose();
+      
+          // Reload the page
+          window.location.reload();
+        } catch (error) {
+          console.error('Error modifying announcement:', error);
+        }
+      };
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className='bg-gray-800 hover:bg-gray-900 text-white'>Create B2B</Button>
+        <Button variant="outline" className='bg-orange-500 hover:bg-orange-600 w-full hover:text-white text-white'>Modifier</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Create B2B</DialogTitle>
+          <DialogTitle>Modifier l'annonce</DialogTitle>
         </DialogHeader>
         <div className='flex flex-col gap-4'>
           <div className='w-full flex flex-col gap-2'>
-            <Label>Title</Label>
-            <Input value={title} onChange={handleTitleChange} />
+            <Label> Titre </Label>
+            <Input value={newTitle} onChange={handleTitleChange} />
           </div>
           <div className='w-full flex flex-col gap-1'>
-            <Label>Description</Label>
-            <Input value={description} onChange={handleDescriptionChange} />
+            <Label> Description </Label>
+            <Input value={newDescription} onChange={handleDescriptionChange} />
           </div>
           <div className='w-full flex items-center gap-1 justify-between'>
-            <Label>Wilaya</Label>
-            <select value={selectedWilaya} onChange={handleWilayaChange} className="block w-[180px] py-2 pl-3 pr-10 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+            <Label> Wilaya </Label>
+            <select value={newSelectedWilaya} onChange={(e) => handleWilayaChange(e.target.value)} className="block w-[180px] py-2 pl-3 pr-10 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
             <option value="">Select Wilaya</option>
           <option value="Adrar">Adrar</option>
           <option value="Chlef">Chlef</option>
@@ -136,8 +163,8 @@ export const B2bDialog = () => {
             </select>
           </div>
           <div className='w-full flex items-center gap-1 justify-between'>
-            <Label>Sector</Label>
-            <select value={selectedSectors} onChange={handleSectorsChange} className="block w-[180px] py-2 pl-3 pr-10 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+            <Label> Secteur </Label>
+            <select value={newSelectedSectors} onChange={(e) => handleSectorsChange(e.target.value)} className="block w-[180px] py-2 pl-3 pr-10 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
             <option value="">Select Sector</option>
           <option value="Électroménager">Électroménager</option>
           <option value="Énergie et services pétroliers">Énergie et services pétroliers</option>
@@ -152,20 +179,23 @@ export const B2bDialog = () => {
           <option value="Ustensile et mobilier de cuisine">Ustensile et mobilier de cuisine</option>
           <option value="Logiciels et matériel informatique">Logiciels et matériel informatique</option>
             </select>
-          </div>
-          <div className='w-full flex flex-col gap-1'>
-            <Label>Contact</Label>
-            <Input value={contact} onChange={handleContactChange} />
-          </div>
+            </div>
+          <div className='w-full flex items-center gap-1 justify-between'>
           <div className='w-full flex flex-col gap-1'>
             <Label>Document</Label>
             <Input value={document} onChange={handleDocumentChange} />
           </div>
+          </div>
+          <div className='w-full flex flex-col gap-1'>
+            <Label> Contact </Label>
+            <Input value={newSelectedContact} onChange={handleContactChange} />
+          </div>
         </div>
         <DialogFooter>
-          <Button type="button" onClick={handleSave}>Save</Button>
+          <Button type="button" onClick={handleSave}>Sauvegarde</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
   );
-};
+}
+

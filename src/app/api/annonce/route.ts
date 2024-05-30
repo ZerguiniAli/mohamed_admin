@@ -13,34 +13,32 @@ export async function POST(request: Request) {
             type,
             date_preemption,
             sectors,
-        } = data;
+        } = data
 
-        // No need to join sectors if it's already a string
-
-        const newAnnonce = await prisma.annonce.createMany({
+        const newB2bService = await prisma.annonce.create({
             data: {
-                title: title,
-                description: description,
-                wilaya: wilaya,
-                type: type,
-                date_preemption: date_preemption,
-                sectors: sectors, // Assuming sectors is already a string
+                title,
+                description,
+                wilaya,
+                type,
+                date_preemption,
+                sectors
             },
         });
 
-        return NextResponse.json(newAnnonce, { status: 201 });
+        return NextResponse.json(newB2bService, { status: 201 });
     } catch (error) {
-        console.error("Error creating annonce:", error);
+        console.error("Error creating b2b service:", error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
 
 export async function GET() {
     try {
-        const announce = await prisma.annonce.findMany({});
-        return NextResponse.json(announce);
+        const b2bServices = await prisma.annonce.findMany();
+        return NextResponse.json(b2bServices);
     } catch (error) {
+        console.error("Error fetching b2b services:", error);
         return NextResponse.error();
     }
 }
-

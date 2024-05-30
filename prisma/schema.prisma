@@ -18,7 +18,7 @@ model annonce {
   sectors         String
 }
 
-model b2bservice {
+model b2b {
   id                   Int                    @id @unique @default(autoincrement())
   title                 String
   description          String

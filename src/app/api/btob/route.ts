@@ -12,19 +12,18 @@ export async function POST(request: Request) {
             wilaya,
             sectors,
             Contact,
-            document
+            document  // Change this to match the key used in the frontend
         } = data;
 
-        // No need to join sectors if it's already a string
 
-        const newAnnonce = await prisma.b2bservice.createMany({
+        const newAnnonce = await prisma.b2b.create({
             data: {
                 title: title,
                 description: description,
-                wilaya : wilaya ,
-                sectors: sectors,
-                Contact : Contact ,
-                document: document,
+                wilaya : wilaya,
+                sectors : sectors,
+                Contact : Contact,
+                document : document,  // Use the decoded document value
             },
         });
 
@@ -37,10 +36,10 @@ export async function POST(request: Request) {
 
 export async function GET() {
     try {
-        const announce = await prisma.annonce.findMany({});
+        const announce = await prisma.b2b.findMany();
         return NextResponse.json(announce);
     } catch (error) {
+        console.error("Error fetching annonces:", error);
         return NextResponse.error();
     }
 }
-
