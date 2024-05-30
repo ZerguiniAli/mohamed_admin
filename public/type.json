@@ -1,0 +1,118 @@
+[
+    {
+        "type": "Type D’appel d’offres",
+        "options": [
+            {
+                "value": "L’appel d’offres national ouvert",
+                "name": "L’appel d’offres national ouvert"
+            },
+            {
+                "value": "L’appel d’offres international ouvert",
+                "name": "L’appel d’offres international ouvert"
+            },
+            {
+                "value": "L’appel d’offres national restreint",
+                "name": "L’appel d’offres national restreint"
+            },
+            {
+                "value": "L’appel d’offres international restreint",
+                "name": "L’appel d’offres international restreint"
+            },
+            {
+                "value": "L’appel d’offres national et international ouvert",
+                "name": "L’appel d’offres national et international ouvert"
+            },
+            {
+                "value": "L’appel d’offres national et international restreint",
+                "name": "L’appel d’offres national et international restreint"
+            }
+        ]
+    },
+    {
+        "type": "Type de Concours",
+        "options": [
+            {
+                "value": "Concours national ouvert",
+                "name": "Concours national ouvert"
+            },
+            {
+                "value": "Concours international ouvert",
+                "name": "Concours international ouvert"
+            },
+            {
+                "value": "Concours national restreint",
+                "name": "Concours national restreint"
+            },
+            {
+                "value": "Concours international restreint",
+                "name": "Concours international restreint"
+            },
+            {
+                "value": "Concours national et international ouvert",
+                "name": "Concours national et international ouvert"
+            },
+            {
+                "value": "Concours national et international restreint",
+                "name": "Concours national et international restreint"
+            }
+        ]
+    },
+    {
+        "type": "Type de Consultations",
+        "options": [
+            {
+                "value": "Consultation nationale ouverte",
+                "name": "Consultation nationale ouverte"
+            },
+            {
+                "value": "Consultation internationale ouverte",
+                "name": "Consultation internationale ouverte"
+            },
+            {
+                "value": "Consultation nationale restreinte",
+                "name": "Consultation nationale restreinte"
+            },
+            {
+                "value": "Consultation internationale restreinte",
+                "name": "Consultation internationale restreinte"
+            },
+            {
+                "value": "Consultation nationale et internationale ouverte",
+                "name": "Consultation nationale et internationale ouverte"
+            },
+            {
+                "value": "Consultation nationale et internationale restreinte",
+                "name": "Consultation nationale et internationale restreinte"
+            }
+        ]
+    },
+    {
+        "type": "Type de Preselections",
+        "options": [
+            {
+                "value": "Présélection nationale ouverte",
+                "name": "Présélection nationale ouverte"
+            },
+            {
+                "value": "Présélection internationale ouverte",
+                "name": "Présélection internationale ouverte"
+            },
+            {
+                "value": "Présélection nationale restreinte",
+                "name": "Présélection nationale restreinte"
+            },
+            {
+                "value": "Présélection internationale restreinte",
+                "name": "Présélection internationale restreinte"
+            },
+            {
+                "value": "Présélection nationale et internationale ouverte",
+                "name": "Présélection nationale et internationale ouverte"
+            },
+            {
+                "value": "Présélection nationale et internationale restreinte",
+                "name": "Présélection nationale et internationale restreinte"
+            }
+        ]
+    }
+]

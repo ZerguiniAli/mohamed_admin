@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model annonce {
+  id              Int       @id @unique(map: "Anonce_id_key") @default(autoincrement())
+  title            String
+  description     String
+  wilaya          String
+  type            String
+  date_preemption String
+  sectors         String
+}
+
+model b2bservice {
+  id                   Int                    @id @unique @default(autoincrement())
+  title                 String
+  description          String
+  wilaya               String
+  sectors               String
+  Contact               String
+  document              String
+}
+
+
+model inscription {
+  id        Int               @id @default(autoincrement())
+  societe   String
+  Non       String
+  Email     String            @unique(map: "Inscription_Email_key")
+  Telephone String
+  Region    String
+  Nomutil   String
+  MotdePase String
+  createdAt DateTime          @default(now())
+  offre     inscription_offre @default(Normal)
+}
+
+enum inscription_offre {
+  Normal
+  Demo
+  VIP
+}

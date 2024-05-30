@@ -1,0 +1,226 @@
+[
+    {
+        "value": "Tourisme et voyage",
+        "name": "Tourisme et voyage"
+    },
+    {
+        "value": "Agriculture, élevage, forêt et pêche",
+        "name": "Agriculture, élevage, forêt et pêche"
+    },
+    {
+        "value": "Assurance et banque",
+        "name": "Assurance et banque"
+    },
+    {
+        "value": "Bâtiment et génie civil",
+        "name": "Bâtiment et génie civil"
+    },
+    {
+        "value": "Électricité bâtiment et éclairage public",
+        "name": "Électricité bâtiment et éclairage public"
+    },
+    {
+        "value": "Équipements pour les collectivités et équipements de ville",
+        "name": "Équipements pour les collectivités et équipements de ville"
+    },
+    {
+        "value": "Architecture et urbanisme",
+        "name": "Architecture et urbanisme"
+    },
+    {
+        "value": "Étude et consulting",
+        "name": "Étude et consulting"
+    },
+    {
+        "value": "Froid, climatisation, chauffage et plomberies",
+        "name": "Froid, climatisation, chauffage et plomberies"
+    },
+    {
+        "value": "Habillement et textiles",
+        "name": "Habillement et textiles"
+    },
+    {
+        "value": "Hydraulique, assainissement et traitement des eaux et équipements",
+        "name": "Hydraulique, assainissement et traitement des eaux et équipements"
+    },
+    {
+        "value": "Impression, édition et communication",
+        "name": "Impression, édition et communication"
+    },
+    {
+        "value": "Services",
+        "name": "Services"
+    },
+    {
+        "value": "Sécurité",
+        "name": "Sécurité"
+    },
+    {
+        "value": "Transport, engin et logistique",
+        "name": "Transport, engin et logistique"
+    },
+    {
+        "value": "Sablage, peinture et travaux plâtre",
+        "name": "Sablage, peinture et travaux plâtre"
+    },
+    {
+        "value": "Travaux publics",
+        "name": "Travaux publics"
+    },
+    {
+        "value": "Immobilier",
+        "name": "Immobilier"
+    },
+    {
+        "value": "Industrie électronique et matériels audio-visuel",
+        "name": "Industrie électronique et matériels audio-visuel"
+    },
+    {
+        "value": "Aéronautique",
+        "name": "Aéronautique"
+    },
+    {
+        "value": "Agro-alimentaire et alimentation",
+        "name": "Agro-alimentaire et alimentation"
+    },
+    {
+        "value": "Batterie, générateur et groupe électrogènes",
+        "name": "Batterie, générateur et groupe électrogènes"
+    },
+    {
+        "value": "Chimie et pétrochimie",
+        "name": "Chimie et pétrochimie"
+    },
+    {
+        "value": "Pièces détachées et pièces de rechange auto",
+        "name": "Pièces détachées et pièces de rechange auto"
+    },
+    {
+        "value": "Équipement médical et laboratoire",
+        "name": "Équipement médical et laboratoire"
+    },
+    {
+        "value": "Formations et certifications",
+        "name": "Formations et certifications"
+    },
+    {
+        "value": "Industrie de la cellulose, papier, carton et emballage",
+        "name": "Industrie de la cellulose, papier, carton et emballage"
+    },
+    {
+        "value": "Industrie manufacturière",
+        "name": "Industrie manufacturière"
+    },
+    {
+        "value": "Industrie plastique et caoutchouc",
+        "name": "Industrie plastique et caoutchouc"
+    },
+    {
+        "value": "Industrie sidérurgique, métallurgique",
+        "name": "Industrie sidérurgique, métallurgique"
+    },
+    {
+        "value": "Hygiène & environnement",
+        "name": "Hygiène & environnement"
+    },
+    {
+        "value": "Bureautique, ameublement et mobilier",
+        "name": "Bureautique, ameublement et mobilier"
+    },
+    {
+        "value": "Matériaux de construction et de finition",
+        "name": "Matériaux de construction et de finition"
+    },
+    {
+        "value": "Médical et paramédical",
+        "name": "Médical et paramédical"
+    },
+    {
+        "value": "Pharmacie et parapharmaceutique",
+        "name": "Pharmacie et parapharmaceutique"
+    },
+    {
+        "value": "Port, aéroport et transit",
+        "name": "Port, aéroport et transit"
+    },
+    {
+        "value": "PVC, Allumium, menuiserie bois et verrerie",
+        "name": "PVC, Allumium, menuiserie bois et verrerie"
+    },
+    {
+        "value": "Quincaillerie générale",
+        "name": "Quincaillerie générale"
+    },
+    {
+        "value": "Restauration et hôtellerie",
+        "name": "Restauration et hôtellerie"
+    },
+    {
+        "value": "Gestion, comptabilité et commissaire aux comptes",
+        "name": "Gestion, comptabilité et commissaire aux comptes"
+    },
+    {
+        "value": "Sport et loisirs",
+        "name": "Sport et loisirs"
+    },
+    {
+        "value": "Télécommunication",
+        "name": "Télécommunication"
+    },
+    {
+        "value": "Pneumatique et mécanique",
+        "name": "Pneumatique et mécanique"
+    },
+    {
+        "value": "Autres",
+        "name": "Autres"
+    },
+    {
+        "value": "Électroménager",
+        "name": "Électroménager"
+    },
+    {
+        "value": "Énergie et services pétroliers",
+        "name": "Énergie et services pétroliers"
+    },
+    {
+        "value": "Équipements industriels",
+        "name": "Équipements industriels"
+    },
+    {
+        "value": "Équipements scientifiques",
+        "name": "Équipements scientifiques"
+        },
+        {
+        "value": "Industrie électrique électrotechnique et équipements",
+        "name": "Industrie électrique électrotechnique et équipements"
+        },
+        {
+        "value": "Travaux de montage de charpente métallique",
+        "name": "Travaux de montage de charpente métallique"
+        },
+        {
+        "value": "Automatismes et informatique industrielle",
+        "name": "Automatismes et informatique industrielle"
+        },
+        {
+        "value": "Décoration intérieur, extérieur et design",
+        "name": "Décoration intérieur, extérieur et design"
+        },
+        {
+        "value": "Trousseaux et mobilier scolaire",
+        "name": "Trousseaux et mobilier scolaire"
+        },
+        {
+        "value": "Mine, agrégats et granulats",
+        "name": "Mine, agrégats et granulats"
+        },
+        {
+        "value": "Ustensile et mobilier de cuisine",
+        "name": "Ustensile et mobilier de cuisine"
+        },
+        {
+        "value": "Logiciels et matériel informatique",
+        "name": "Logiciels et matériel informatique"
+        }
+]
