@@ -55,7 +55,7 @@ export const ModifyDialog: React.FC<ModifyDialogProps> = ({ id, title, wilaya, d
           };
       
           // Make the API call to save the modified announcement
-          const response = await fetch(`http://localhost:3001/api/btob/${id}`, {
+          const response = await fetch(`/api/btob/${id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',

@@ -21,7 +21,7 @@ const Page = () => {
     // Fetch B2B services data from API
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/btob');
+        const response = await fetch('/api/btob');
         if (response.ok) {
           const data = await response.json();
           setB2bServices(data);

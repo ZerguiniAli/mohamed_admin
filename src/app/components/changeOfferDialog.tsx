@@ -17,7 +17,7 @@ export const DialogDemo = ({
 
   const handleSave = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/users/${id}`, {
+      const response = await fetch(`/api/users/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

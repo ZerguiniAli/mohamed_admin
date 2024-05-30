@@ -22,7 +22,7 @@ export const B2bDialog = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/btob', {
+      const response = await fetch('/api/btob', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

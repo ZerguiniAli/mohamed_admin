@@ -17,7 +17,7 @@ const Page = () => {
   const [annonces, setAnnonces] = useState<Annonce[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/annonce')
+    fetch('/api/annonce')
       .then(response => response.json())
       .then(data => {
         setAnnonces(data as Annonce[]);

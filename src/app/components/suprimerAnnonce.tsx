@@ -13,7 +13,7 @@ export const DialogDelete = ({
 }) => {
   const handleDelte = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/annonce/${id}`, {
+      const response = await fetch(`/api/annonce/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
